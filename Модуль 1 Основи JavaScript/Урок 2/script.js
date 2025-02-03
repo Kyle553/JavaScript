@@ -46,7 +46,7 @@ console.log(type1_string, type1_number, type1_boolean, type1_undefined, type1_ob
 const type2_string = "Text";
 const type2_number = 10;
 const type2_boolean = false;
-const type2_undefined = undefined;2
+const type2_undefined = undefined;
 const type2_object = [1, 2, 3, 4, 5];
 const type2_null = null;
 const type2_symbol = Symbol("symbol");
