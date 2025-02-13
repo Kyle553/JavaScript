@@ -7,8 +7,9 @@ const rl = readline.createInterface({
 
 function askQuestion() {
   rl.question("", function (value) {
-    value = value.trim().split(/\s+/);
-    console.log("Ваші числа: \n", value.map(Number).sort((a, b) => a - b));
+    value = value.trim().split(/\s+/).map(Number).sort((a, b) => a - b);
+    console.log("Всі числа: \n", value);
+
     const maxNum = Math.max(...value);
     console.log("Найбільше число:", maxNum);
 
