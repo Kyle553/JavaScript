@@ -16,8 +16,9 @@
         height: 100%;
         min-height: 100vh;
       }
-
+      
       body {
+        font-family: "Lucida Sans";
         background-color: rgb(92, 91, 91);
       }
 
@@ -28,9 +29,6 @@
       }
       /* SCROLL */
       .div1 {
-        /* display: flex;
-        flex-direction: column;
-        gap: 100px; */
         height: 50%;
         overflow: auto;
       }
@@ -48,8 +46,54 @@
 
       /* BLUR */
       /* FOCUS */
-      /* FOCUSin */
+      /* FOCUSIN */
+      /* FOCUOUT */
 
+      /* CHANGE */
+      .ch1 {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* CONTEXTMENU */
+      .div4 {
+        width: 100px;
+        height: 40px;
+        background-color: rgb(51, 51, 51);
+        color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* DRAG AND DROP */
+      .div5 {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .div6 {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(51, 51, 51);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .div7 {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        background-color: rgb(51, 51, 51);
+        color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
 
@@ -72,6 +116,25 @@
       <input class="input2" type="text" placeholder="FOCUS 2"/>
       <input class="input3" type="text" placeholder="FOCUS 3"/>
     </div>
+
+    <!-- FOCUSOUT --> <div class="space">FOCUSOUT</div>
+    <div class="focusin2">
+      <input class="input4" type="text" placeholder="FOCUS 1"/>
+      <input class="input5" type="text" placeholder="FOCUS 2"/>
+      <input class="input6" type="text" placeholder="FOCUS 3"/>
+    </div>
+
+    <!-- CHANGE --> <div class="space">СHANGE</div>
+    <input class="ch1" type="checkbox"/>
+
+    <!-- CONTEXTMENU --> <div class="space">CONTEXTMENU</div>
+    <div class="div4">ПКМ</div>
+    
+    <!-- DRAG AND DROP --> <div class="space">DRAG</div>
+     <div class="div5">
+        <div class="div6">Перетягни сюди</div>
+        <div class="div7" draggable="true">Перетягуй</div>
+     </div>
     <script src="./script.js"></script>
   </body>
 </html>

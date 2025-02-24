@@ -8,11 +8,11 @@ div1.addEventListener("scroll", () => {
 
   if (scrl === 0) {
     div2.style.backgroundColor = "rgb(189, 153, 153)";
-  } else if (scrl > 0 && scrl < 454) {
+  } else if (scrl > 0 && scrl < 477) {
       div2.style.backgroundColor = "rgb(165, 179, 90)";
-    } else  if (scrl >= 554) {
+    } else if (scrl >= 577) {
         div3.style.backgroundColor = "rgb(172, 164, 164)";
-      } else if (scrl > 454 && scrl < 554) {
+      } else if (scrl > 477 && scrl < 577) {
           div3.style.backgroundColor = "rgb(70, 31, 31)";
         }
 
@@ -40,26 +40,74 @@ const input1 = document.querySelector(".input1");
 const input2 = document.querySelector(".input2");
 const input3 = document.querySelector(".input3");
 
-focusin1.addEventListener("focusin", (event) => {
-  if (event.target === input1) {
+focusin1.addEventListener("focusin", (e) => {
+  if (e.target === input1) {
     input1.style.backgroundColor = "rgb(0, 0, 0)";
-  } else if (event.target === input2) {
+  } else if (e.target === input2) {
       input2.style.backgroundColor = "rgb(0, 0, 0)";
     } else {
         input3.style.backgroundColor = "rgb(0, 0, 0)";
       }
 });
 
+// FOCUSOUT =======================================================
+const focusin2 = document.querySelector(".focusin2");
+const input4 = document.querySelector(".input4");
+const input5 = document.querySelector(".input5");
+const input6 = document.querySelector(".input6");
+
+focusin2.addEventListener("focusout", (e) => {
+  if (e.target === input4) {
+    input4.style.backgroundColor = "rgb(0, 0, 0)";
+  } else if (e.target === input5) {
+      input5.style.backgroundColor = "rgb(0, 0, 0)";
+    } else {
+        input6.style.backgroundColor = "rgb(0, 0, 0)";
+      }
+});
+
+// CHANGE =======================================================
+const ch1 = document.querySelector(".ch1");
+
+ch1.addEventListener("change", (e) => {
+  if (e.target.checked === true) {
+    ch1.style.width = "100px"
+  } else {
+      ch1.style.width = "20px"
+    }
+});
+
+// CONTEXTMENU =======================================================
+const conm = document.querySelector(".div4");
+
+conm.addEventListener("contextmenu", (e) => {
+  conm.style.backgroundColor = "rgb(238, 233, 233)";
+  conm.style.color = "black";
+  e.preventDefault();
+});
+
+// DRAG AND DROP =======================================================
+const div6 = document.querySelector(".div6");
+const div7 = document.querySelector(".div7");
+ 
+div6.addEventListener("dragenter", () => {
+  div6.style.backgroundColor = "rgb(0, 0, 0)";
+});
+
+div6.addEventListener("dragleave", () => {
+  div6.style.backgroundColor = "rgb(51, 51, 51)";
+});
+
+div6.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  div6.textContent = "Дозволяє перемістити";  
+});
 
 
 
 
-
-
-
-
-
-
+// .textContent = "Перетягни сюди"; .pageX
+// СКРОЛ 574
 
 
 
