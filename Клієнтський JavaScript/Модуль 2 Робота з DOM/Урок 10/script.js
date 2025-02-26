@@ -89,36 +89,92 @@ conm.addEventListener("contextmenu", (e) => {
 // DRAG AND DROP =======================================================
 const div6 = document.querySelector(".div6");
 const div7 = document.querySelector(".div7");
- 
-div6.addEventListener("dragenter", () => {
-  div6.style.backgroundColor = "rgb(0, 0, 0)";
+const ptext1 = document.querySelector(".ptext1");
+const ptext2 = document.querySelector(".ptext2");
+const ptext3 = document.querySelector(".ptext3");
+const ptext4 = document.querySelector(".ptext4");
+
+// dragenter
+div6.addEventListener("dragenter", (e) => {
+  ptext1.textContent = `"${e.type}" Елемент зайшов в drop zone`
 });
 
-div6.addEventListener("dragleave", () => {
+// dragleave
+div6.addEventListener("dragleave", (e) => {
   div6.style.backgroundColor = "rgb(51, 51, 51)";
+  ptext1.textContent = `"${e.type}" Елемент ВИЙШОВ з drop zone`
+  ptext2.textContent = `"dragover" НЕ Працює`
+  div6.textContent = "Перетягни сюди"
 });
 
+// dragover
 div6.addEventListener("dragover", (e) => {
   e.preventDefault();
   div6.textContent = "Дозволяє перемістити";  
+  ptext2.textContent = `"${e.type}" Працює`
+
+  function color() {
+    return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+  }
+
+  div6.style.cssText = `background-color: ${color()};`
+});
+
+// drop
+div6.addEventListener("drop", (e) => {
+  ptext3.textContent = `"${e.type}" Елементи "скинуто"`
+  setTimeout(() => {
+    ptext3.textContent = ""
+  }, 4000);
+
+  ptext2.textContent = `"dragover" НЕ Працює`;
+});
+
+// dragstart
+div7.addEventListener("dragstart", (e) => {
+  ptext4.textContent = `"${e.type}" Почав перетягувати елемент`;
+});
+
+// dragend
+div7.addEventListener("dragend", (e) => {
+  ptext4.textContent = `"${e.type}" ЗАКІНЧИВ перетягувати елемент`;
+});
+
+// FULLSCREENCHANGE =======================================================
+const full = document.fullscreenElement;
+const div8 = document.querySelector(".div8");
+
+div8.addEventListener("click", () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+      document.documentElement.requestFullscreen();
+    }
+});
+
+// KEY =======================================================
+const div9 = document.querySelector(".div9");
+const ptext5 = document.querySelector(".ptext5");
+const ptext6 = document.querySelector(".ptext6");
+const ptext7 = document.querySelector(".ptext7");
+
+// keydown
+document.documentElement.addEventListener("keydown", (e) => {
+  ptext5.textContent = `Натиснуто на: ${e.code} - "${e.key}"`
+});
+
+// keyup
+document.documentElement.addEventListener("keyup", (e) => {
+  ptext6.textContent =`Віджато клавішу: ${e.code} - "${e.key}"`
+});
+
+// keypress
+document.documentElement.addEventListener("keypress", (e) => {
+  ptext7.textContent =`Застарілий трігер натискання на клавішу: ${e.code} - "${e.key}"`
 });
 
 
-
-
-// .textContent = "Перетягни сюди"; .pageX
-// СКРОЛ 574
-
-
-
-
-
-
-
-
-
-
-
+// load
 
 
 
