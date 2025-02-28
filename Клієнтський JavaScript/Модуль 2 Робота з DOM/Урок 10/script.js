@@ -1,3 +1,7 @@
+function color() {
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+}
+
 // SCROLL =======================================================
 const div1 = document.querySelector(".div1");
 const div2 = document.querySelector(".div2");
@@ -96,33 +100,29 @@ const ptext4 = document.querySelector(".ptext4");
 
 // dragenter
 div6.addEventListener("dragenter", (e) => {
-  ptext1.textContent = `"${e.type}" Елемент зайшов в drop zone`
+  ptext1.textContent = `"${e.type}" Елемент зайшов в drop zone`;
 });
 
 // dragleave
 div6.addEventListener("dragleave", (e) => {
   div6.style.backgroundColor = "rgb(51, 51, 51)";
-  ptext1.textContent = `"${e.type}" Елемент ВИЙШОВ з drop zone`
-  ptext2.textContent = `"dragover" НЕ Працює`
-  div6.textContent = "Перетягни сюди"
+  ptext1.textContent = `"${e.type}" Елемент ВИЙШОВ з drop zone`;
+  ptext2.textContent = `"dragover" НЕ Працює`;
+  div6.textContent = "Перетягни сюди";
 });
 
 // dragover
 div6.addEventListener("dragover", (e) => {
   e.preventDefault();
   div6.textContent = "Дозволяє перемістити";  
-  ptext2.textContent = `"${e.type}" Працює`
+  ptext2.textContent = `"${e.type}" Працює`;
 
-  function color() {
-    return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
-  }
-
-  div6.style.cssText = `background-color: ${color()};`
+  div6.style.cssText = `background-color: ${color()};`;
 });
 
 // drop
 div6.addEventListener("drop", (e) => {
-  ptext3.textContent = `"${e.type}" Елементи "скинуто"`
+  ptext3.textContent = `"${e.type}" Елементи "скинуто"`;
   setTimeout(() => {
     ptext3.textContent = ""
   }, 4000);
@@ -160,28 +160,116 @@ const ptext7 = document.querySelector(".ptext7");
 
 // keydown
 document.documentElement.addEventListener("keydown", (e) => {
-  ptext5.textContent = `Натиснуто на: ${e.code} - "${e.key}"`
+  ptext5.textContent = `Натиснуто на: ${e.code} - "${e.key}"`;
 });
 
 // keyup
 document.documentElement.addEventListener("keyup", (e) => {
-  ptext6.textContent =`Віджато клавішу: ${e.code} - "${e.key}"`
+  ptext6.textContent =`Віджато клавішу: ${e.code} - "${e.key}"`;
 });
 
 // keypress
 document.documentElement.addEventListener("keypress", (e) => {
-  ptext7.textContent =`Застарілий трігер натискання на клавішу: ${e.code} - "${e.key}"`
+  ptext7.textContent =`Застарілий трігер натискання на клавішу: ${e.code} - "${e.key}"`;
+});
+
+// LOAD =======================================================
+const ptext8 = document.querySelector(".ptext8");
+
+window.addEventListener("load", () => {
+  ptext8.textContent = "Вкладка завантажилась повністю";
+});
+
+// MOUS =======================================================
+const div10 = document.querySelector(".div10");
+const div11 = document.querySelector(".div11");
+const div12 = document.querySelector(".div12");
+const div13 = document.querySelector(".div13");
+
+// mousedown
+div11.addEventListener("mousedown", () => {
+  div11.style.cssText = `background-color: ${color()};`;
+  div11.textContent = "Мишка затиснута";
+});
+
+// mouseup
+div11.addEventListener("mouseup", () => {
+  div11.style.cssText = `background-color: ${color()};`;
+  div11.textContent = "Мишка відтиснута";
+});
+
+// click
+// div11.addEventListener("click", () => {
+//   div11.style.cssText = `background-color: ${color()};`;
+//   div11.textContent = "Натиснуто";
+// });
+
+// mousemove
+div11.addEventListener("mousemove", () => {
+  div11.style.cssText = `background-color: ${color()};`;
+});
+
+// mouseenter
+div11.addEventListener("mouseenter", () => {
+  div11.textContent = "Мишка зайшла";
+});
+
+// mouseleave
+div11.addEventListener("mouseleave", () => {
+  div11.textContent = "Мишка вийшла";
+});
+
+// mouseover
+div10.addEventListener("mouseover", (e) => {
+  div11.style.cssText = `background-color: ${color()};`;
+  div11.textContent = `Мишка ${e.type}`;
+});
+
+// mouseout
+div10.addEventListener("mouseout", (e) => {
+  div11.style.cssText = `background-color: ${color()};`;
+  div11.textContent = `Мишка ${e.type}`;
+});
+
+// dblclick
+div11.addEventListener("dblclick", () => {
+  div11.textContent = "Подвійне натискання";
+});
+
+// wheel
+window.addEventListener("wheel", () => {
+  div13.style.cssText = `background-color: ${color()};`;
+});
+
+// WINDOW =======================================================
+// online
+window.addEventListener("online", () => {
+  console.log("Online");
+});
+
+// offline
+window.addEventListener("offline", () => {
+  console.log("Offline");
+});
+
+// beforeunload не спрацьовує
+window.addEventListener("beforeunload", (e) => {
+  // e.returnValue = "";
+  // e.defaultPrevented();
+});
+
+// resize
+window.addEventListener("resize", () => {  
+  console.clear();
+  console.log(`Видима ширина вікна браузера: ${window.innerWidth}; \nВидима висота вікна браузера: ${window.innerHeight};`);
 });
 
 
-// load
 
-
-
-
-
-
-
+// touchstart
+// touchmove
+// touchend
+// touchcancel
 
 
 
