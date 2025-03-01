@@ -75,9 +75,9 @@ const ch1 = document.querySelector(".ch1");
 
 ch1.addEventListener("change", (e) => {
   if (e.target.checked === true) {
-    ch1.style.width = "100px"
+    ch1.style.width = "100px";
   } else {
-      ch1.style.width = "20px"
+      ch1.style.width = "20px";
     }
 });
 
@@ -254,7 +254,7 @@ window.addEventListener("offline", () => {
 
 // beforeunload не спрацьовує
 window.addEventListener("beforeunload", (e) => {
-  // e.returnValue = "";
+  e.returnValue = "";
   // e.defaultPrevented();
 });
 
@@ -264,44 +264,35 @@ window.addEventListener("resize", () => {
   console.log(`Видима ширина вікна браузера: ${window.innerWidth}; \nВидима висота вікна браузера: ${window.innerHeight};`);
 });
 
-
+// TOUCH =======================================================
+const div14 = document.querySelector(".div14");
+const ptext9 = document.querySelector(".ptext9");
 
 // touchstart
-// touchmove
+window.addEventListener("touchstart", (e) => {
+  div14.style.cssText = `background-color: ${color()};`;
+  ptext9.textContent = `${e.type}`;
+  console.clear();
+  console.log(e.changedTouches);
+});
+
 // touchend
+window.addEventListener("touchend", (e) => {
+  div14.style.cssText = `background-color: ${color()};`;
+  ptext9.textContent = `${e.type}`;
+});
+
+// touchmove
+window.addEventListener("touchmove", (e) => {
+  div14.style.cssText = `background-color: ${color()};`;
+  ptext9.textContent = `${e.type}, X${e.touches[0].pageX}, Y${e.touches[0].pageY}`;
+});
+
 // touchcancel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.addEventListener("touchcancel", (e) => {
+  div14.style.cssText = `background-color: ${color()};`;
+  ptext9.textContent = `${e.type}`;
+});
 
 
 
@@ -414,7 +405,3 @@ window.addEventListener("resize", () => {
 //     }
 //   event.stopPropagation();
 // });
-
-
-
-
