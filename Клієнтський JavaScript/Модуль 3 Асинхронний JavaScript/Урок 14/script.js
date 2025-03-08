@@ -14,6 +14,7 @@ pr1
   .catch(error => console.log(false))
   .finally(() => console.log("Finally1"));
 
+// ===========================================================================
 new Promise((resolve) => {
   setTimeout(() => resolve(5), 1000);
 })
