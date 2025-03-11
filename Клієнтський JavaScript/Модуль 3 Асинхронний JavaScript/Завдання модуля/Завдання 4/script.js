@@ -15,7 +15,7 @@ function time_until() {
 
   const zero = (num) => num < 10 ? `0${num}` : num;
 
-  return `До 05-11-2035 13:20:50 залишилось: ${zero(days)}:${zero(hours)}:${zero(minutes)}:${zero(seconds)}`
+  return `До 05-11-2035 13:20:50 залишилось: ${zero(days)}:${zero(hours)}:${zero(minutes)}:${zero(seconds)}`;
 };
 
 time_until();
