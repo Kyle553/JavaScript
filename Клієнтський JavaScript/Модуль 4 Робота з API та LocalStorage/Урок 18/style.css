@@ -20,16 +20,25 @@ body {
 
 .all {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px
+  flex-direction: column;
+  text-align: center;
+  padding-top: 20px;
 }
 
-.div1, .div2  {
+.d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0px 20px 0px;
+}
+
+.st {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   background-color: rgb(36, 35, 35);
+  border-radius: 10px;
 }
