@@ -7,7 +7,7 @@ async function data () {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(`CATCH ERROR: ${error}`);
+    console.error(`CATCH ERROR: ${error.message}`);
   }
 }
 
