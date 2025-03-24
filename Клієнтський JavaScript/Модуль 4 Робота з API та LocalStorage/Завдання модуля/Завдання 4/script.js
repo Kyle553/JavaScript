@@ -16,25 +16,40 @@ async function data1 () {
 
 
 
-async function data2 () {
-  let username = await data1();
-  username = username.sort((a, b) => a.length - b.length);
+// async function data2 () {
+//   let username = await data1();
+//   username = username.sort((a, b) => a.length - b.length);
 
-  console.log(username);
+//   console.log(username);
 
-  // const search = window.prompt("");
+//   const search = window.prompt("");
 
-  // while (search.length <= username.at(-1).length) {
-  //   const high = username.at(-1).length;
-  //   const low = username[0].length;
-  //   const mid = username.at(-1).length / 2
-  // }
+//   const high = username.at(-1).length;
+//   const low = username[0].length;
+//   const mid = low + (high - low) / 2
+
+//   while (low <= high) {
+
+//     if (mid === search.length) {
+//       if () {
+
+//       }
+//     } else if ((search.length > mid) && (search.length <= high)) {
+//         low = mid++
+//         mid = low + (high - low) / 2
+//     } else if ((search.length < mid) && (search.length >= low)) {
+//         high = mid--
+//         mid = low + (high - low) / 2
+//     }
+
+    
+//   }
+//   // 1 2 3 4 5 6 7 8 9 10
 
 
 
+// }
 
-}
-
-data2()
+// data2()
 
 // Як передати дані за межі async
