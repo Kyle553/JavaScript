@@ -11,5 +11,51 @@ html, body {
 }
 
 body {
-  background-color: rgb(92, 91, 91);
+  background-color: rgb(15, 18, 30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.div2 {
+  background-color: rgb(198, 201, 214);
+  width: 90%;
+  height: 60%;
+  padding: 20px 40px 20px 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inp {
+  width: 900px;
+  height: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  background-color: rgba(109, 109, 109, 0.418);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.div1 {
+  width: 200px;
+  height: 100px;
+  background-color: rgb(42, 42, 73);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: white;
+  border-radius: 8px;
+
 }

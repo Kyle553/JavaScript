@@ -8,48 +8,42 @@ async function data1 () {
   
     let data = await response.json();
     
-    return data.map(data => data.username);
+    return data.map(user => ({
+      id: user.id,
+      name: user.name,
+      username: user.username,
+      email: user.email
+    }));
   } catch (error) {
       console.error(`CATCH ERROR: ${error.message}`);
   }
 }
 
+const inp1 = document.querySelector(".inp");
 
+let inpText = "";
+inp1.addEventListener("input", (e) => {
+  inpText = e.target.value;
+});
 
-// async function data2 () {
-//   let username = await data1();
-//   username = username.sort((a, b) => a.length - b.length);
+const div1 = document.querySelector(".div1");
+const username_info = document.querySelector(".username_info"); 
 
-//   console.log(username);
+async function enter() {
+  const data = await data1();
+  
+  function search (un) {
+    for (let i = 0; i < data.length; i++) {
+      if (un.toLowerCase() === data[i].username.toLowerCase()) {
+        return data[i];
+      }
+    }
+    return "Користувача не знайдено";
+  };
+  
+  div1.addEventListener("click", async () => {
+  username_info.textContent = `${JSON.stringify(search(inpText))}`;
+  });
+}
 
-//   const search = window.prompt("");
-
-//   const high = username.at(-1).length;
-//   const low = username[0].length;
-//   const mid = low + (high - low) / 2
-
-//   while (low <= high) {
-
-//     if (mid === search.length) {
-//       if () {
-
-//       }
-//     } else if ((search.length > mid) && (search.length <= high)) {
-//         low = mid++
-//         mid = low + (high - low) / 2
-//     } else if ((search.length < mid) && (search.length >= low)) {
-//         high = mid--
-//         mid = low + (high - low) / 2
-//     }
-
-    
-//   }
-//   // 1 2 3 4 5 6 7 8 9 10
-
-
-
-// }
-
-// data2()
-
-// Як передати дані за межі async
+enter();
