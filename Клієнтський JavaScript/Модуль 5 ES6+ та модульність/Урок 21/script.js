@@ -12,7 +12,7 @@ class Car {
   }
 }
 
-const carInfo = new Car("Toyota", "Camry", 2023)
+const carInfo = new Car("Toyota", "Camry", 2023);
 carInfo.info();
 
 // наслідування ====================================================
@@ -30,3 +30,81 @@ class ElectricCar extends Car {
 
 const electricCar = new ElectricCar("Nissan", "Leaf", 2023, 98);
 electricCar.charge();
+
+// наслідуваний клас без конструктора ====================================================
+class SecondElectricCar extends ElectricCar {
+  // JS автоматично створить метод конструктор() з властивостями і методами батьківського конструктора
+}
+
+const secondElectricCar = new SecondElectricCar("Nissan", "Leaf", 2023, 73);
+secondElectricCar.charge();
+
+// ІНКАПСУЛЯЦІЯ =================================================================================================
+//===============================================================================================================
+class Wallet {
+  #money = 0; // приватне поле
+
+  constructor ( startingMoney ) {
+    this.#money = startingMoney;
+  }
+
+  add ( amount ) {
+    if (amount > 0) {
+      this.#money += amount;
+    }
+  }
+
+  getMoney () {
+    return this.#money;
+  }
+}
+
+const myWallet = new Wallet(200);
+console.log(`${myWallet.getMoney()} грн`);
+
+myWallet.add(300);
+console.log(`${myWallet.getMoney()} грн`);
+
+// ПОЛІМОРФІЗМ ==================================================================================================
+//===============================================================================================================
+// додавання ====================================================
+class Addition {
+  constructor ( number ) {
+    this.number = number;
+  }
+
+  result () {
+    return this.number + this.number;
+  }
+ }
+
+ const five = new Addition(5);
+ console.log(`Результат додавання = ${five.result()}`);
+
+// множення ====================================================
+class Multiplication extends Addition {
+  constructor ( number ) {
+    super( number );
+  }
+
+  result () {
+    return this.number * this.number;
+  }
+}
+
+const ten = new Multiplication(10);
+console.log(`Результат множення = ${ten.result()}`);
+
+// ділення ====================================================
+class Division extends Addition {
+  constructor ( number ) {
+    super( number );
+  }
+
+  result () {
+    return this.number / this.number;
+  }
+}
+
+const twenty = new Division(20);
+console.log(`Результат ділення = ${twenty.result()}`);
