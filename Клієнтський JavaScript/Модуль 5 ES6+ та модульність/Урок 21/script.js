@@ -33,7 +33,7 @@ electricCar.charge();
 
 // наслідуваний клас без конструктора ====================================================
 class SecondElectricCar extends ElectricCar {
-  // JS автоматично створить метод конструктор() з властивостями і методами батьківського конструктора
+  // JS автоматично створить метод constructor() з властивостями і методами батьківського конструктора
 }
 
 const secondElectricCar = new SecondElectricCar("Nissan", "Leaf", 2023, 73);
@@ -108,3 +108,36 @@ class Division extends Addition {
 
 const twenty = new Division(20);
 console.log(`Результат ділення = ${twenty.result()}`);
+
+// АБСТРАКЦІЯ ===================================================================================================
+//===============================================================================================================
+class User {
+  #password = null;
+
+  constructor () {
+
+  }
+
+  setPassword ( newPassword ) {
+    if (newPassword.toString().length > 6) {
+      this.#password = newPassword.toString();
+      console.log(`Новий пароль: ${this.#password}`);
+    } else {
+      console.log(`Пароль повинен бути довше 6 символів.`);
+    }
+  }
+
+  login ( password ) {
+    if (this.#password === password) {
+      console.log(`Пароль вірний`);
+      return true;
+    } else {
+      console.log(`Пароль не вірний`);
+      return false;
+    }
+  }
+}
+
+const user = new User();
+user.setPassword(`PASSWORD`);
+user.login(`password`);
