@@ -36,7 +36,7 @@ function createCounter () {
       console.log(`Лічильник скинуто`);
       return this;
     }
-  } 
+  };
 }
 
 const counter = createCounter();
