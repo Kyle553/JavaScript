@@ -21,7 +21,7 @@ console.log(9);
 
 //1 3 9 6 7 8 2
 
-// 1 - synchronous code > call stack 
+// 1 - synchronous code > call stack
 // 3 - synchronous code > call stack 
 // 9 - synchronous code > call stack 
 
